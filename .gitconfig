@@ -1,0 +1,39 @@
+[user]
+	name = Yuri Niyazov
+	email = yuri.niyazov@gmail.com
+[color]
+	ui = auto
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar)%Creset --abbrev-commit'
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[url "ssh://localhost"]
+	insteadOf = "git://localhost"
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+[rerere]
+	enabled = 1
+[push]
+	default = current
+[github]
+	user = yn
+[heroku]
+	account = personal
+[log]
+	date = iso
+        search = log -p -G
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[rebase]
+	autosquash = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
